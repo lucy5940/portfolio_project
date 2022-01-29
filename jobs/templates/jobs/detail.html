@@ -60,46 +60,17 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Lucy Lu</h1>
-        <p class="lead text-muted">Hello, my name is Lucy.</p>
+        <h1 class="fw-light">Job Detail</h1>
+        <p class="lead text-muted">{{job.summary}}.</p>
+        <img src="{{job.image.url}}" height=200> </img>
         <p>
-          <a href="mailto:lpy0573@gmail.com" class="btn btn-primary my-2">Email me</a>
-        </p>
-        <img src="{% static 'WechatIMG66.jpg' %}" height=300> </img>
+            <a href="{% url 'home' %}" class="btn btn-primary my-2"> Back to home</a>
+          </p>
       </div>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% for job in jobs.all %}
-
-        <div class="col">
-        <a href="{% url 'detail' job.id %}"> 
-          <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" src="{{job.image.url}}"></img>
-            <div class="card-body">
-              <p class="card-text">  {{job.summary}}.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </a>
-        </div>
-        {% endfor %}
-      </div>
-
-    </div>
-  </div>
-
+  
 </main>
 
 
